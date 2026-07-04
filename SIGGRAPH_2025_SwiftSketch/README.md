@@ -20,7 +20,7 @@
 ## 3. Methodology (제안 방법론 요약)
 1. **Feature Extraction:** 사전 학습된 CLIP 이미지 인코더(ResNet)를 사용하여 입력 이미지에서 기하학적, 의미론적 특징(Image Embedding)을 추출함.
 2. **Denoising Process:** 추출된 이미지 임베딩과 타임스텝을 교차 주의(Cross-attention) 메커니즘을 통해 Transformer-decoder에 전달하여 32개의 스트로크 좌표 노이즈를 제거함.
-3. **Training Objective:** 제어점 간의 L1 거리인 $$\mathcal{L}_{points}$$와 래스터화(Rasterized)된 스케치 이미지 간의 LPIPS 거리인 $$\mathcal{L}_{raster}$$를 함께 사용하여 정밀도와 전체적인 구조적 유사성을 동시에 학습함.
+3. **Training Objective:** 제어점 간의 L1 거리인 ($$\mathcal{L}_{points}$$)와 래스터화(Rasterized)된 스케치 이미지 간의 LPIPS 거리인 ($$\mathcal{L}_{raster}$$)를 함께 사용하여 정밀도와 전체적인 구조적 유사성을 동시에 학습함.
 4. **Refinement Stage:** 추론 마지막 단계에서 남아있는 미세한 노이즈를 제거하기 위해, 파라미터가 미세 조정된 복제 네트워크($$M_{\theta^+}$$)를 통해 한 번 더 정제 과정을 거침.
 
 ## 4. Limitations & Future Work (한계점 및 향후 연구)
